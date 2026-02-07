@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Integer Comparison" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Program3.aspx.vb" Inherits="Multi.Program3" %>
+<%@ Page Title="Integer Comparison" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Program3.aspx.vb" Inherits="Multi.Program3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .card {
@@ -22,12 +22,26 @@
                             <label class="form-label">Integer 1</label>
                             <asp:TextBox ID="txtone" runat="server"
                                 CssClass="form-control" />
+                            <asp:RegularExpressionValidator
+                                 ID="revOne"
+                                 ControlToValidate="txtone"
+                                 ValidationExpression="^\d+$"
+                                 ErrorMessage="Numbers only"
+                                 ForeColor="Red"
+                                 runat="server" />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Integer 2</label>
                             <asp:TextBox ID="txttwo" runat="server"
                                 CssClass="form-control" />
+                            <asp:RegularExpressionValidator
+                                  ID="RegularExpressionValidator1"
+                                  ControlToValidate="txttwo"
+                                  ValidationExpression="^\d+$"
+                                  ErrorMessage="Numbers only"
+                                  ForeColor="Red"
+                                  runat="server" />
                         </div>
 
                         <div class="d-grid mb-3">
