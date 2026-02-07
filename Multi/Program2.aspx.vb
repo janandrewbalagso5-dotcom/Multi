@@ -1,4 +1,4 @@
-﻿Public Class Program2
+Public Class Program2
     Inherits System.Web.UI.Page
 
     Protected Sub btnCom_Click(sender As Object, e As EventArgs) Handles btnCom.Click
@@ -24,5 +24,9 @@
         Else
             txtQuo.Text = (intone / inttwo).ToString()
         End If
+    End Sub
+
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None
     End Sub
 End Class
