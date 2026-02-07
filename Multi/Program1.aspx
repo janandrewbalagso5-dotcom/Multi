@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Compute Grades" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Program1.aspx.vb" Inherits="Multi.Program1" %>
+<%@ Page Title="Compute Grades" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Program1.aspx.vb" Inherits="Multi.Program1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
         .card {
@@ -22,18 +22,39 @@
                             <label class="form-label">Prelim Grade</label>
                             <asp:TextBox ID="txtpre" runat="server"
                                 CssClass="form-control" />
+                            <asp:RegularExpressionValidator
+                                 ID="RegularExpressionValidator1"
+                                 ControlToValidate="txtpre"
+                                 ValidationExpression="^\d+$"
+                                 ErrorMessage="Numbers only"
+                                 ForeColor="Red"
+                                 runat="server" />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Midterm Grade</label>
                             <asp:TextBox ID="txtmid" runat="server"
                                 CssClass="form-control" />
+                            <asp:RegularExpressionValidator
+                                 ID="RegularExpressionValidator2"
+                                 ControlToValidate="txtmid"
+                                 ValidationExpression="^\d+$"
+                                 ErrorMessage="Numbers only"
+                                 ForeColor="Red"
+                                 runat="server" />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Final Grade</label>
                             <asp:TextBox ID="txtfin" runat="server"
                                 CssClass="form-control" />
+                            <asp:RegularExpressionValidator
+                                ID="RegularExpressionValidator3"
+                                ControlToValidate="txtfin"
+                                ValidationExpression="^\d+$"
+                                ErrorMessage="Numbers only"
+                                ForeColor="Red"
+                                runat="server" />
                         </div>
 
                         <hr />
