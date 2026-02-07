@@ -1,8 +1,21 @@
-﻿Public Class Program4
+Public Class Program4
     Inherits System.Web.UI.Page
+
     Protected Sub btnCom_Click(sender As Object, e As EventArgs) Handles btnCom.Click
         Dim prelim, midterm, finalGrade, cmg, cmf As Double
         Dim equiv As String
+
+        If String.IsNullOrWhiteSpace(txtPre.Text) _
+          Or String.IsNullOrWhiteSpace(txtmid.Text) _
+          Or String.IsNullOrWhiteSpace(txtfi.Text) Then
+
+            ClientScript.RegisterStartupScript(Me.GetType(),
+        "alert",
+        "alert('Please fill in all grade fields.');",
+        True)
+
+            Exit Sub
+        End If
 
         ' Convert input values
         prelim = Double.Parse(txtPre.Text.Trim())
@@ -49,4 +62,7 @@
         End If
     End Sub
 
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None
+    End Sub
 End Class
